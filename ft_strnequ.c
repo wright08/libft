@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 14:35:38 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/23 15:40:10 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/21 20:44:16 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/21 20:46:27 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putstr(char *str)
+int		ft_strnequ(char *s1, char *s2, size_t n)
 {
-	int len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	write(1, str, len);
+	return (ft_strncmp(s1, s2, n) == 0);
 }

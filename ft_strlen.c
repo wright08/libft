@@ -6,19 +6,16 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 12:37:00 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/16 21:06:26 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/21 22:08:32 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_strlen(const char *str)
 {
 	int	len;
 
 	len = 0;
-	while (*str)
-	{
+	while (str[len])
 		len++;
-		str++;
-	}
 	return (len);
 }

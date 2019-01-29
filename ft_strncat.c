@@ -6,14 +6,16 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 11:08:59 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/16 08:59:02 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/21 22:19:46 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dst, char *src, int n)
+#include "libft.h"
+
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	int		dst_len;
-	int		i;
+	size_t	dst_len;
+	size_t	i;
 
 	i = 0;
 	dst_len = 0;

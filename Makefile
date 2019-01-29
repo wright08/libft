@@ -32,7 +32,29 @@ SRC = \
 	  ft_strnstr\
 	  ft_strchr\
 	  ft_strrchr\
-	  ft_strdup
+	  ft_strdup\
+	  ft_memset\
+	  ft_bzero\
+	  ft_memcpy\
+	  ft_memccpy\
+	  ft_memcmp\
+	  ft_memchr\
+	  ft_memmove\
+	  ft_putendl\
+	  ft_memalloc\
+	  ft_memdel\
+	  ft_strnew\
+	  ft_strdel\
+	  ft_strclr\
+	  ft_striter\
+	  ft_striteri\
+	  ft_strmap\
+	  ft_strmapi\
+	  ft_strequ\
+	  ft_strnequ\
+	  ft_strsub\
+	  ft_strjoin\
+	  ft_strtrim
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 14:35:38 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/23 15:40:10 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/21 20:22:59 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/21 20:29:51 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int len;
+	unsigned int i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	write(1, str, len);
+	i = 0;
+	while (*s)
+		(*f)(i++, s++);
 }
