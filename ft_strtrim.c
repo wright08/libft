@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 21:40:48 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/28 22:01:58 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 10:37:35 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ char	*ft_strtrim(const char *s)
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;
 	end = start;
-	while (s[end])
+	while (s[end + 1])
 		end++;
-	end--;
-	while (s[end] == ' ' || s[end] == '\n' || s[start] == '\t')
+	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
 		end--;
 	if (start == 0 && s[end + 1] != '\n' && s[end + 1] != ' ' &&
 			s[end + 1] != '\t')

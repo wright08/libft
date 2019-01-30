@@ -54,7 +54,9 @@ SRC = \
 	  ft_strnequ\
 	  ft_strsub\
 	  ft_strjoin\
-	  ft_strtrim
+	  ft_strtrim\
+	  ft_strsplit\
+	  ft_itoa
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
