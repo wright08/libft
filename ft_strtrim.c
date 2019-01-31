@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 21:40:48 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 19:56:20 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 21:11:10 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	is_space(int c)
 	return (c == '\n' || c == '\t' || c == ' ');
 }
 
-char	*ft_strtrim(const char *s)
+char		*ft_strtrim(const char *s)
 {
 	char	*ret;
 	int		start;

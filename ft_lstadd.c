@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/14 10:45:03 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/14 10:48:17 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 20:51:08 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/30 20:53:01 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+#include "libft.h"
+
+void	ft_lstadd(t_list **lst, t_list *new)
 {
-	while (*str)
-	{
-		if (*str < ' ' || *str > '~')
-			return (0);
-		str++;
-	}
-	return (1);
+	new->next = (*lst);
+	(*lst) = new;
 }

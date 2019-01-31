@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/13 09:28:53 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/14 16:23:25 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 20:44:46 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/30 20:47:07 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
-{
-	char *start;
+#include "libft.h"
 
-	start = str;
-	while (*str)
-	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;
-		str++;
-	}
-	return (start);
+void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t))
+{
+	(*del)((*lst)->content, (*lst)->content_size);
+	ft_memdel((void **)lst);
 }

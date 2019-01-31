@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 07:41:43 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 19:08:30 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 21:10:21 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const t_byte 	*s1u;
-	const t_byte 	*s2u;
+	const t_byte	*s1u;
+	const t_byte	*s2u;
 	size_t			i;
 
 	if (!n)

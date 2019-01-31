@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/14 10:26:48 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/14 16:33:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 20:47:43 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/30 20:50:57 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+#include "libft.h"
+
+void	ft_lstdel(t_list **lst, void (*del)(void *, size_t))
 {
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
-	}
-	return (1);
+	if ((*lst)->next)
+		ft_lstdel(&(*lst)->next, del);
+	ft_lstdelone(lst, del);
 }

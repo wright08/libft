@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/13 08:10:20 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/14 16:21:35 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 20:57:26 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/30 21:06:21 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
-{
-	char *start;
+#include "libft.h"
 
-	start = str;
-	while (*str)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list *ret;
+
+	ret = 0;
+	if (lst)
 	{
-		if (*str >= 'a' && *str <= 'z')
-			*str -= 32;
-		str++;
+		ret = (*f)(lst);
+		ret->next = ft_lstmap(lst->next, f);
 	}
-	return (start);
+	return (ret);
 }

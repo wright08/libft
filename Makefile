@@ -61,11 +61,11 @@ SRC = \
 	  ft_putstr_fd\
 	  ft_putendl_fd\
 	  ft_putnbr_fd\
-#	  ft_lstnew\
-#	  ft_lstdelone\
-#	  ft_lstdel\
-#	  ft_lstadd\
-#	  ft_lstiter\
+	  ft_lstnew\
+	  ft_lstdelone\
+	  ft_lstdel\
+	  ft_lstadd\
+	  ft_lstiter\
 #	  ft_lstmap
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
