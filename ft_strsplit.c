@@ -6,14 +6,14 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 10:49:26 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 19:59:37 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 21:19:26 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int		count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int words;
 	int i;
@@ -32,7 +32,7 @@ int		count_words(const char *s, char c)
 	return (words);
 }
 
-int		len_word(const char *s, char c)
+static int	len_word(const char *s, char c)
 {
 	int len;
 
@@ -42,7 +42,7 @@ int		len_word(const char *s, char c)
 	return (len);
 }
 
-void	*free_all(char **arr, int words)
+static void	*free_all(char **arr, int words)
 {
 	while (words--)
 		free(arr[words]);
@@ -50,7 +50,7 @@ void	*free_all(char **arr, int words)
 	return (NULL);
 }
 
-int		set_next_word(char **word, const char *s, char c)
+static int	set_next_word(char **word, const char *s, char c)
 {
 	static int	offset = 0;
 	int			word_len;
@@ -68,7 +68,7 @@ int		set_next_word(char **word, const char *s, char c)
 	return (1);
 }
 
-char	**ft_strsplit(const char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	char	**ret;
 	int		word_count;
