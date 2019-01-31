@@ -1,2 +1,2 @@
-match function declarations to man page
-stopped on : strrchr
+1. Make helper functions "static"
+

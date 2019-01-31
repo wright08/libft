@@ -1,18 +1,11 @@
-#include <ctype.h>
+#include "libft.h"
+#include <limits.h>
 #include <stdio.h>
 
-char	**ft_strsplit(const char *s, char c);
+char 	*ft_itoa(int n);
 
 int main(void)
 {
-	char	**arr;
-	int		i;
-	arr = ft_strsplit("eeae", 'e');
-	if (arr)
-	{
-		i = 0;
-		while (arr[i])
-			printf("%s\n", arr[i++]);
-	}
+	printf("%s\n", ft_itoa(-23));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 14:20:43 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 11:09:33 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 16:29:56 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		((t_byte *)dst)[i] = ((t_byte *)src)[i];
-		if (((t_byte *)dst)[i] == c)
-			return (dst + i + 1);
-		i++;
+		if (((t_byte *)dst)[i++] == c)
+			return (dst + i);
 	}
 	return (NULL);
 }

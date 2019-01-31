@@ -6,15 +6,13 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/21 19:44:42 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/21 19:58:26 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 20:06:06 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putendl(char *s)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	ft_putendl_fd(s, 0);
 }

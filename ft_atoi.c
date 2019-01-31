@@ -6,22 +6,24 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 20:25:23 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/16 08:58:46 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 19:16:34 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
-	int ret;
+	int n;
 	int neg;
 
-	ret = 0;
+	n = 0;
 	while (*str == '\n' || *str == '\t' || *str == '\v' ||
 			*str == '\f' || *str == '\r' || *str == ' ')
 		str++;
 	if ((neg = *str == '-') || *str == '+')
 		str++;
-	while (*str >= '0' && *str <= '9')
-		ret = ret * 10 + *(str++) - '0';
-	return (neg ? -ret : ret);
+	while (ft_isdigit(*str))
+		n = n * 10 + *str++ - '0';
+	return (neg ? -n : n);
 }

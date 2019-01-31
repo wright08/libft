@@ -6,24 +6,24 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 21:33:51 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/16 08:59:09 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 16:45:41 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *haystack, char *needle)
-{
-	int		i;
-	char	*scan_h;
+#include "libft.h"
 
-	scan_h = haystack;
-	while (*scan_h)
+char	*ft_strstr(const char *haystack, const char *needle)
+{
+	int	i;
+
+	while (*haystack)
 	{
 		i = 0;
-		while (needle[i] && needle[i] == scan_h[i])
+		while (needle[i] && needle[i] == haystack[i])
 			i++;
 		if (!needle[i])
-			return (scan_h);
-		scan_h++;
+			return ((char *)haystack);
+		haystack++;
 	}
-	return ((void *)0);
+	return (NULL);
 }

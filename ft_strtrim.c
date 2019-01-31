@@ -6,12 +6,17 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 21:40:48 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 10:37:35 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 19:56:20 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static int	is_space(int c)
+{
+	return (c == '\n' || c == '\t' || c == ' ');
+}
 
 char	*ft_strtrim(const char *s)
 {
@@ -20,21 +25,19 @@ char	*ft_strtrim(const char *s)
 	int		end;
 
 	start = 0;
-	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
+	while (is_space(s[start]))
 		start++;
 	end = start;
 	while (s[end + 1])
 		end++;
-	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
+	while (is_space(s[end]))
 		end--;
-	if (start == 0 && s[end + 1] != '\n' && s[end + 1] != ' ' &&
-			s[end + 1] != '\t')
+	if (start == 0 && !is_space(s[end + 1]))
+		return (ft_strdup(s));
+	if ((ret = malloc(end - start + 2)))
 	{
-		ret = malloc(ft_strlen(s) + 1);
-		return (ft_strcpy(ret, s));
+		ft_memcpy(ret, s + start, end - start + 1);
+		ret[end - start + 1] = '\0';
 	}
-	if (!(ret = malloc(end - start + 2)))
-		return (NULL);
-	ret[end - start + 1] = '\0';
-	return (ft_memcpy(ret, s + start, end - start + 1));
+	return (ret);
 }

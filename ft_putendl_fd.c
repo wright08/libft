@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 20:59:05 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 20:04:56 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 15:05:37 by rwright           #+#    #+#             */
+/*   Updated: 2019/01/30 15:08:45 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putendl_fd(const char *s, int fd)
 {
-	ft_putchar_fd(c, 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

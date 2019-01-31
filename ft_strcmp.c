@@ -6,29 +6,26 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 22:25:20 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/16 22:08:39 by rwright          ###   ########.fr       */
+/*   Updated: 2019/01/30 19:10:47 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	unsigned char *s1_u;
-	unsigned char *s2_u;
+#include "libft.h"
 
-	s1_u = (unsigned char *)s1;
-	s2_u = (unsigned char *)s2;
-	while (*s1_u && *s2_u)
+int		ft_strcmp(const char *s1, const char *s2)
+{
+	const t_byte 	*s1u;
+	const t_byte 	*s2u;
+	size_t			i;
+
+	s1u = (const t_byte *)s1;
+	s2u = (const t_byte *)s2;
+	i = 0;
+	while (s1u[i])
 	{
-		if (*s1_u < *s2_u)
-			return (*s1_u - *s2_u);
-		else if (*s1_u > *s2_u)
-			return (*s1_u - *s2_u);
-		s1_u++;
-		s2_u++;
+		if (s1u[i] != s2u[i])
+			break ;
+		i++;
 	}
-	if (!*s1_u && *s2_u)
-		return (-*s2_u);
-	else if (*s1_u && !*s2_u)
-		return (*s1_u);
-	return (0);
+	return (s1u[i] - s2u[i]);
 }
