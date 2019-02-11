@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/10 17:21:49 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/10 22:32:27 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		ft_tolower(int c);
 /*
 **		[LIBFT STRINGS/MEM]
 */
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);

@@ -4,7 +4,7 @@ NAME = libft.a
 AR = ar
 ARFLAGS = -rcs
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra
 OBJ_DIR = obj
 
 SRC = \
@@ -66,7 +66,7 @@ SRC = \
 	  ft_lstdel\
 	  ft_lstadd\
 	  ft_lstiter\
-#	  ft_lstmap
+	  ft_lstmap
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
