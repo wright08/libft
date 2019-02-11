@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 19:38:32 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/10 17:21:49 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ struct	s_list
 typedef struct s_list	t_list;
 typedef unsigned char	t_byte;
 typedef unsigned int	t_uint;
-
 
 /*
 **		[LIBFT I/O]
