@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 14:09:58 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 20:18:03 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/10 21:12:16 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_itoa(int n)
 	nc = n;
 	if ((neg = nc < 0))
 		nc = -nc;
-	while ((n /= 10) != 0)
+	while ((n /= 10))
 		len++;
-	if ((ret = ft_strnew(len + neg ? 2 : 1)))
+	if ((ret = ft_strnew(len + neg)))
 	{
 		if (neg)
 			ret[0] = '-';

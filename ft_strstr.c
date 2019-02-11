@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 21:33:51 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 16:45:41 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/10 20:18:11 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 {
 	int	i;
 
+	if (!*needle)
+		return ((char *)haystack);
 	while (*haystack)
 	{
 		i = 0;

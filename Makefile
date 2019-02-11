@@ -4,7 +4,7 @@ NAME = libft.a
 AR = ar
 ARFLAGS = -rcs
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -O3
 OBJ_DIR = obj
 
 SRC = \
