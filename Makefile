@@ -1,72 +1,92 @@
-#/usr/bin/make -f
+#usr/bin/make -f
 
 NAME = libft.a
 AR = ar
 ARFLAGS = -rcs
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
+INC = -I inc
+SRC_DIR = src
 OBJ_DIR = obj
 
+#	CTYPES
 SRC = \
-	  ft_atoi\
-	  ft_putnbr\
-	  ft_putstr\
-	  ft_putchar\
-	  ft_strcat\
-	  ft_strcmp\
-	  ft_strcpy\
-	  ft_strlcat\
-	  ft_strlcpy\
-	  ft_strncat\
-	  ft_strncmp\
-	  ft_strncpy\
-	  ft_strstr\
-	  ft_strlen\
-	  ft_isalpha\
-	  ft_isdigit\
 	  ft_isalnum\
+	  ft_isalpha\
 	  ft_isascii\
+	  ft_isdigit\
 	  ft_isprint\
+	  ft_isspace\
 	  ft_toupper\
-	  ft_tolower\
-	  ft_strnstr\
-	  ft_strchr\
-	  ft_strrchr\
-	  ft_strdup\
-	  ft_memset\
+	  ft_tolower
+
+#	STDLIB
+SRC += \
+	  ft_atoi
+
+#	STRING
+SRC += \
 	  ft_bzero\
+	  ft_memchr\
+	  ft_memcmp\
 	  ft_memcpy\
 	  ft_memccpy\
-	  ft_memcmp\
-	  ft_memchr\
 	  ft_memmove\
+	  ft_memset\
+	  ft_strcat\
+	  ft_strlcat\
+	  ft_strncat\
+	  ft_strchr\
+	  ft_strrchr\
+	  ft_strcmp\
+	  ft_strncmp\
+	  ft_strcpy\
+	  ft_strlcpy\
+	  ft_strncpy\
+	  ft_strdup\
+	  ft_strstr\
+	  ft_strnstr
+
+#	SHITTY PRINTF
+SRC += \
+	  ft_putchar\
+	  ft_putchar_fd\
 	  ft_putendl\
+	  ft_putendl_fd\
+	  ft_putnbr\
+	  ft_putnbr_fd\
+	  ft_putstr\
+	  ft_putstr_fd
+
+#	STRINGS/MEM
+SRC += \
+	  ft_itoa\
 	  ft_memalloc\
 	  ft_memdel\
-	  ft_strnew\
-	  ft_strdel\
 	  ft_strclr\
+	  ft_strdel\
+	  ft_strequ\
 	  ft_striter\
 	  ft_striteri\
+	  ft_strjoin\
+	  ft_strlen\
 	  ft_strmap\
 	  ft_strmapi\
-	  ft_strequ\
 	  ft_strnequ\
-	  ft_strsub\
-	  ft_strjoin\
-	  ft_strtrim\
+	  ft_strnew\
 	  ft_strsplit\
-	  ft_itoa\
-	  ft_putchar_fd\
-	  ft_putstr_fd\
-	  ft_putendl_fd\
-	  ft_putnbr_fd\
-	  ft_lstnew\
-	  ft_lstdelone\
-	  ft_lstdel\
+	  ft_strsub\
+	  ft_strtrim
+
+#	LIST
+SRC += \
 	  ft_lstadd\
+	  ft_lstdel\
+	  ft_lstdelone\
 	  ft_lstiter\
-	  ft_lstmap
+	  ft_lstmap\
+	  ft_lstnew
+
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
@@ -81,9 +101,9 @@ $(NAME): $(OBJ)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@echo "$(GREEN)DONE$(NC)"
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
