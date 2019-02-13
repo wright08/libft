@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_add.c                                       :+:      :+:    :+:   */
+/*   vector_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 21:40:34 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/12 16:40:10 by rwright          ###   ########.fr       */
+/*   Created: 2019/02/12 15:53:35 by rwright           #+#    #+#             */
+/*   Updated: 2019/02/12 16:41:13 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
+#include <stdlib.h>
 
-t_vector	*vector_add(t_vector *v, void *item)
+t_vector *vector_init(int capacity)
 {
-	if (v->capacity == v->total && !vector_resize(v))
-		return (NULL);
-	v->items[v->total++] = item;
-	return (v);
+	t_vector *new;
+
+	if ((new = malloc(capacity * sizeof(size_t))))
+	{
+		new->capacity = capacity;
+		new->total = 0;
+	}
+	return (new);
 }
