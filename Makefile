@@ -5,7 +5,9 @@ AR = ar
 ARFLAGS = -rcs
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-INC = -I inc
+CFLAGS += -Ofast
+CFLAGS += #-g -fsanitize=address
+INC = -I includes
 SRC_DIR = src
 OBJ_DIR = obj
 
@@ -87,6 +89,15 @@ SRC += \
 	  ft_lstmap\
 	  ft_lstnew
 
+#	VECTOR
+SRC += \
+	   vector/vector_add\
+	   vector/vector_delete\
+	   vector/vector_free\
+	   vector/vector_get\
+	   vector/vector_new\
+	   vector/vector_resize\
+	   vector/vector_set
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 

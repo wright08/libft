@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/21 20:00:46 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/10 22:23:21 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/13 01:36:26 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*ptr;
+	void	*ret;
 
-	if ((ptr = malloc(size)))
-		ft_memset(ptr, '\0', size);
-	return (ptr);
+	if ((ret = malloc(size)))
+		ft_bzero(ret, size);
+	return (ret);
 }

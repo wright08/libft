@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 10:49:26 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/11 00:16:33 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/13 01:41:56 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,11 @@ static int	set_next_word(char **word, const char *s, char c, int *offset)
 
 	while (s[*offset] == c)
 		(*offset)++;
-	if (s[*offset])
-	{
-		word_len = len_word(s + *offset, c);
-		if (!(*word = ft_strnew(word_len)))
-			return (0);
-		ft_strncpy(*word, s + *offset, word_len);
-		*offset += word_len;
-	}
+	word_len = len_word(s + *offset, c);
+	if (!(*word = ft_strnew(word_len)))
+		return (0);
+	ft_strncpy(*word, s + *offset, word_len);
+	*offset += word_len;
 	return (1);
 }
 
@@ -75,16 +72,18 @@ char		**ft_strsplit(const char *s, char c)
 	int		offset;
 
 	word_count = count_words(s, c);
-	if (!(ret = malloc(sizeof(size_t) * (word_count + 1))))
-		return (free_all(ret, 0));
-	i = 0;
-	offset = 0;
-	while (i < word_count)
+	if ((ret = malloc((word_count + 1) * sizeof(size_t))))
 	{
-		if (!set_next_word(ret + i, s, c, &offset))
-			return (free_all(ret, i));
-		i++;
+		i = 0;
+		offset = 0;
+		while (i < word_count)
+		{
+			if (!set_next_word(ret + i, s, c, &offset))
+				return (free_all(ret, i));
+			i++;
+		}
+		ret[i] = 0;
+		return (ret);
 	}
-	ret[i] = 0;
-	return (ret);
+	return (free_all(ret, 0));
 }

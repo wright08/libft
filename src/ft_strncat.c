@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 11:08:59 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/21 22:19:46 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/13 01:05:17 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 
 char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	size_t	dst_len;
-	size_t	i;
+	char	*end;
 
-	i = 0;
-	dst_len = 0;
-	while (dst[i++])
-		dst_len++;
-	i = 0;
-	while (i < n && src[i])
-	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
+	end = ft_memccpy(dst + ft_strlen(dst), src, '\0',  n);
+	if (end)
+		*(--end) = '\0';
 	return (dst);
 }
