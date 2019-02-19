@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:10:49 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/12 16:41:51 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/14 19:19:24 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	vector_set(t_vector *v, int index, void *item)
 {
-	if (index >= 0 && index < v->total)
-		v->items[index] = item;
+	v->items[index] = item;
 }
