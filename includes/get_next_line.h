@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/18 14:12:44 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/19 12:53:17 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include "vector.h"
 
-# define BUFF_SIZE 1
+# define BUFF_SIZE 4096
 
 struct	s_file
 {
