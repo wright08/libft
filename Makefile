@@ -5,7 +5,7 @@ AR = ar
 ARFLAGS = -rcs
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-CFLAGS += -Ofast
+CFLAGS += #-Ofast
 CFLAGS += #-g -fsanitize=address
 INC = -I includes
 SRC_DIR = src
@@ -98,6 +98,9 @@ SRC += \
 	   vector/vector_new\
 	   vector/vector_resize\
 	   vector/vector_set
+
+# GET_NEXT_LINE
+SRC += get_next_line/get_next_line
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
