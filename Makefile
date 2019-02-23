@@ -1,5 +1,3 @@
-#usr/bin/make -f
-
 NAME = libft.a
 AR = ar
 ARFLAGS = -rcs
@@ -80,6 +78,10 @@ SRC += \
 	  ft_strsub\
 	  ft_strtrim
 
+#	STDIO
+SRC += \
+	   get_next_line
+
 #	LIST
 SRC += \
 	  ft_lstadd\
@@ -98,9 +100,6 @@ SRC += \
 	   vector/vector_new\
 	   vector/vector_resize\
 	   vector/vector_set
-
-# GET_NEXT_LINE
-SRC += get_next_line/get_next_line
 
 OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
