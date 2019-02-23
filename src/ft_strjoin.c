@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 21:05:20 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/13 01:44:32 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/23 13:47:34 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	if ((ret = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	if ((ret = malloc(s1_len + s2_len + 1)))
 	{
 		ft_memcpy(ret, s1, s1_len);
 		ft_memcpy(ret + s1_len, s2, s2_len + 1);
