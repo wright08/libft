@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 12:37:00 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/10 22:37:09 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/23 14:29:25 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t len;
 
+	if (!str)
+		return (0);
 	len = 0;
 	while (str[len])
 		len++;
