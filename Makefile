@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 CFLAGS += #-Ofast
 CFLAGS += #-g -fsanitize=address
-INC = -I includes
+INC = -I inc
 SRC_DIR = src
 OBJ_DIR = obj
 
@@ -61,6 +61,7 @@ SRC += \
 #	STRINGS/MEM
 SRC += \
 	  ft_itoa\
+	  ft_lltoa\
 	  ft_memalloc\
 	  ft_memdel\
 	  ft_strclr\

@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/12 17:54:11 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/26 21:21:44 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_putstr_fd(const char *str, int fd);
 **		[LIBFT STRINGS/MEM]
 */
 char	*ft_itoa(int n);
+char	*ft_lltoa(long long n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 void	ft_strclr(char *s);
