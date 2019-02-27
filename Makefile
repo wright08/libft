@@ -62,6 +62,7 @@ SRC += \
 SRC += \
 	  ft_itoa\
 	  ft_lltoa\
+	  ft_ulltoa_base\
 	  ft_memalloc\
 	  ft_memdel\
 	  ft_strclr\

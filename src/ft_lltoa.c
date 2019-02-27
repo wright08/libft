@@ -6,7 +6,7 @@
 /*   By: rwright <rwright@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 21:04:11 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/26 21:20:16 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/27 13:17:48 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_lltoa(long long n)
 	overflow = (n == LONG_MIN);
 	if ((neg = n < 0))
 		n = -(n + overflow);
-	len = num_len(n);;
+	len = num_len(n);
 	if ((ret = ft_strnew(len + neg)))
 	{
 		if (neg)

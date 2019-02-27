@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/26 21:21:44 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/27 13:45:31 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_putstr_fd(const char *str, int fd);
 */
 char	*ft_itoa(int n);
 char	*ft_lltoa(long long n);
+char	*ft_ulltoa_base(unsigned long long n, int base);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 void	ft_strclr(char *s);
