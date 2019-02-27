@@ -26,7 +26,7 @@ char		*ft_ulltoa_base(unsigned long long n, int base)
 			base_digits = "0123456789ABCDEF";
 		while (len--)
 		{
-			ret[len] = base_digits[n % base] + '0';
+			ret[len] = base_digits[n % base];
 			n /= base;
 		}
 	}
