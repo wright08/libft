@@ -20,6 +20,10 @@ SRC = \
 	  ft_toupper\
 	  ft_tolower
 
+#	MATH
+SRC += \
+	   ft_pow
+
 #	STDLIB
 SRC += \
 	  ft_atoi

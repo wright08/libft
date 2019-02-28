@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/27 13:45:31 by rwright          ###   ########.fr       */
+/*   Updated: 2019/02/27 17:55:42 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+/*
+** 		[MATH]
+*/
+long	ft_pow(int base, int exponent);
 
 /*
 **		[STDLIB]
