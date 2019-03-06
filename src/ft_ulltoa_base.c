@@ -17,16 +17,16 @@ char		*ft_ulltoa_base(unsigned long long n, int base)
 	int		len;
 	char	*base_digits;
 
+	if (base < 17)
+		base_digits = "0123456789abcdef";
+	else
+	{
+		base_digits = "0123456789ABCDEF";
+		base = 16;
+	}
 	len = num_len(n, base);
 	if ((ret = ft_strnew(len)))
 	{
-		if (base < 17)
-			base_digits = "0123456789abcdef";
-		else
-		{
-			base_digits = "0123456789ABCDEF";
-			base = 16;
-		}
 		while (len--)
 		{
 			ret[len] = base_digits[n % base];
