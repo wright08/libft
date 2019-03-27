@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rwright <rwright@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 08:18:47 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/27 17:55:42 by rwright          ###   ########.fr       */
+/*   Updated: 2019/03/27 16:30:46 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <sys/types.h>
 
 struct	s_list
 {
@@ -80,8 +81,8 @@ void	ft_putendl(char *str);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr(char *s);
-void	ft_putstr_fd(const char *str, int fd);
+ssize_t	ft_putstr(char *s);
+ssize_t	ft_putstr_fd(const char *str, int fd);
 
 /*
 **		[LIBFT STRINGS/MEM]
