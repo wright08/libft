@@ -16,6 +16,9 @@
 # include <stddef.h>
 # include <sys/types.h>
 
+# define ANY2(x, y1, y2)		((x) == (y1) || (x) == (y2))
+# define ANY3(x, y1, y2, y3)	((x) == (y1) || (x) == (y2) || (x) == (y3))
+
 struct	s_list
 {
 	void			*content;

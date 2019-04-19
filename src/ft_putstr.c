@@ -6,7 +6,7 @@
 /*   By: rwright <rwright@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 14:35:38 by rwright           #+#    #+#             */
-/*   Updated: 2019/03/27 16:28:19 by rwright          ###   ########.fr       */
+/*   Updated: 2019/04/19 05:18:06 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 ssize_t	ft_putstr(char *str)
 {
-	return(ft_putstr_fd(str, 1));
+	return (ft_putstr_fd(str, 1));
 }
