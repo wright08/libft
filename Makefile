@@ -24,6 +24,16 @@ SRC = \
 SRC += \
 	   ft_pow
 
+#	PRINTF
+SRC += \
+	printf/float\
+	printf/int\
+	printf/chr_str_ptr_mod\
+	printf/uint\
+	printf/utils\
+	printf/ft_printf\
+	printf/parse
+
 #	STDLIB
 SRC += \
 	  ft_atoi
