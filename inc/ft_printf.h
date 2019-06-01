@@ -58,7 +58,7 @@ int						conv_ptr(t_conv *conv, va_list ap);
 int						conv_str(t_conv *conv, va_list ap);
 int						conv_uint(t_conv *conv, va_list ap);
 
-void					parse_fmt(t_conv *conv, const char **format);
+void					parse_fmt(t_conv *conv, const char **fmt, va_list ap);
 
 int						has(char *field, char *str);
 int						ft_printf(const char *format, ...);

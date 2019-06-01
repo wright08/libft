@@ -22,21 +22,34 @@ static void	parse_flags(t_conv *conv, const char **format)
 	}
 }
 
-static void	parse_width(t_conv *conv, const char **format)
+static void	parse_width(t_conv *conv, const char **format, va_list ap)
 {
-	if (ft_isdigit(**format))
+	if (**format == '*')
+	{
+		conv->width = va_arg(ap, int);
+		if (conv->width < 0)
+		{
+			if (!ft_strchr(conv->flags, '-'))
+				ft_strcat(conv->flags, "-");
+			conv->width = -conv->width;
+		}
+	}
+	else if (ft_isdigit(**format))
 		conv->width = ft_atoi(*format);
 	while (ft_isdigit(**format))
 		(*format)++;
 }
 
-static void	parse_precision(t_conv *conv, const char **format)
+static void	parse_precision(t_conv *conv, const char **format, va_list ap)
 {
 	conv->precision = -1;
 	if (**format == '.')
 	{
 		(*format)++;
-		conv->precision = ft_isdigit(**format) ? ft_atoi(*format) : 0;
+		conv->precision = (**format == '*') ?
+			va_arg(ap, int) : ft_atoi(*format);
+		if (conv->precision < 0)
+			conv->precision = 0;
 	}
 	while (**format == '-' || ft_isdigit(**format))
 		(*format)++;
@@ -52,10 +65,10 @@ static void	parse_len_mod(t_conv *conv, const char **format)
 	}
 }
 
-void		parse_fmt(t_conv *conv, const char **format)
+void		parse_fmt(t_conv *conv, const char **format, va_list ap)
 {
 	parse_flags(conv, format);
-	parse_width(conv, format);
-	parse_precision(conv, format);
+	parse_width(conv, format, ap);
+	parse_precision(conv, format, ap);
 	parse_len_mod(conv, format);
 }

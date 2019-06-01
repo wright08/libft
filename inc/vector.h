@@ -6,7 +6,7 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 21:05:52 by rwright           #+#    #+#             */
-/*   Updated: 2019/02/22 21:36:06 by rwright          ###   ########.fr       */
+/*   Updated: 2019/05/20 10:22:33 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void		vector_delete(t_vector *v, int index);
 void		vector_free(t_vector *v);
 void		*vector_get(t_vector *v, int index);
 t_vector	*vector_new(int capacity);
+t_vector	*vector_init(t_vector *v, int capacity);
 t_vector	*vector_resize(t_vector *v, int capacity);
 void		vector_set(t_vector *v, int index, void *item);
 

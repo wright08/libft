@@ -34,7 +34,7 @@ int		convert(const char **format, va_list ap)
 
 	ft_bzero(&conv, sizeof(t_conv));
 	(*format)++;
-	parse_fmt(&conv, format);
+	parse_fmt(&conv, format, ap);
 	while (**format)
 	{
 		conv.type = *(*format)++;
