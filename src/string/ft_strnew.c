@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/21 20:06:48 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:43:31 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_stdlib.h"
+#include <stddef.h>
+#include <stdlib.h>
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+char	*ft_strnew(size_t size)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	char *str;
 
-#endif
+	if ((str = ft_memalloc(size + 1)))
+		return (str);
+	return (NULL);
+}

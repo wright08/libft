@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 14:09:58 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:11:54 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_string.h"
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+char	*ft_itoa(int n)
 {
-	int		fd;
-	char	*thread;
+	char	*ret;
+	long	nc;
 	int		len;
-};
-typedef struct s_file	t_file;
+	int		neg;
 
-#endif
+	len = 1;
+	nc = n;
+	if ((neg = nc < 0))
+		nc = -nc;
+	while ((n /= 10))
+		len++;
+	if ((ret = ft_strnew(len + neg)))
+	{
+		if (neg)
+			ret[0] = '-';
+		while (len--)
+		{
+			ret[neg + len] = nc % 10 + '0';
+			nc /= 10;
+		}
+	}
+	return (ret);
+}

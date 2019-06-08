@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/12 20:25:23 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:10:55 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_ctypes.h"
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+int		ft_atoi(const char *str)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	long	n;
+	int		neg;
 
-#endif
+	n = 0;
+	while (ft_isspace(*str))
+		str++;
+	if ((neg = *str == '-') || *str == '+')
+		str++;
+	while (ft_isdigit(*str))
+		n = n * 10 + *str++ - '0';
+	return ((int)(neg ? -n : n));
+}

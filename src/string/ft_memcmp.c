@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/21 19:02:56 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:40:11 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <stddef.h>
+#include <stdint.h>
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	const uint8_t	*s1p;
+	const uint8_t	*s2p;
+	size_t			i;
 
-#endif
+	s1p = s1;
+	s2p = s2;
+	i = 0;
+	while (i < n)
+	{
+		if (s1p[i] != s2p[i])
+			return (s1p[i] - s2p[i]);
+		i++;
+	}
+	return (0);
+}

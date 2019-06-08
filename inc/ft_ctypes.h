@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_ctypes.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rwright <rwright@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/06/06 15:32:31 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/06 15:32:33 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef FT_CTYPES_H
+# define FT_CTYPES_H
 
-# define BUFF_SIZE 4096
-
-struct	s_file
-{
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_isspace(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif

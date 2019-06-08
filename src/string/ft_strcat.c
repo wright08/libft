@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/14 10:49:00 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:39:19 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# define BUFF_SIZE 4096
-
-struct	s_file
+char	*ft_strcat(char *dst, const char *src)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	char *start;
 
-#endif
+	start = dst;
+	while (*dst)
+		dst++;
+	while (*src)
+		*(dst++) = *(src++);
+	*dst = '\0';
+	return (start);
+}

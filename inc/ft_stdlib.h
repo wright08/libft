@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rwright <rwright@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/06/06 15:42:04 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:44:19 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef FT_STDLIB_H
+# define FT_STDLIB_H
 
-# define BUFF_SIZE 4096
+# include <stddef.h>
 
-struct	s_file
-{
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+int		ft_atoi(const char *str);
+char*	ft_itoa(int n);
+char*	ft_lltoa(long long n);
+char*	ft_ulltoa_base(unsigned long long n, int base);
+void*	ft_memalloc(size_t size);
 
 #endif

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/12 21:11:51 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:32:52 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_string.h"
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
-
-#endif
+	ft_memcpy(dst, src, ft_strlen(src) + 1);
+	return (dst);
+}

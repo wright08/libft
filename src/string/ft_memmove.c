@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/21 19:25:25 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:36:52 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_string.h"
+#include <stdint.h>
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	void *end;
 
-#endif
+	if (dst == src || !n)
+		return (dst);
+	else if (dst > src)
+		return (ft_memcpy(dst, src, n));
+	end = dst + n;
+	while (dst != end)
+		*((uint8_t *)dst++) = *((const uint8_t *)src++);
+	return (dst - n);
+}

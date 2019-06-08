@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/30 15:08:52 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:48:10 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_stdio.h"
 
-# define BUFF_SIZE 4096
-
-struct	s_file
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	long overflow;
 
-#endif
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		overflow = n;
+		if (n < -9)
+			ft_putnbr_fd(-overflow / 10, fd);
+		ft_putchar_fd(-overflow % 10 + '0', fd);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+}

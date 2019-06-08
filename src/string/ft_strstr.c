@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 21:24:06 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:50:03 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/12 21:33:51 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 16:42:29 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# define BUFF_SIZE 4096
-
-struct	s_file
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int		fd;
-	char	*thread;
-	int		len;
-};
-typedef struct s_file	t_file;
+	int	i;
 
-#endif
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack)
+	{
+		i = 0;
+		while (needle[i] && needle[i] == haystack[i])
+			i++;
+		if (!needle[i])
+			return ((char *)haystack);
+		haystack++;
+	}
+	return (0);
+}
