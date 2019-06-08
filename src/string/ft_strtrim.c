@@ -6,11 +6,11 @@
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/28 21:40:48 by rwright           #+#    #+#             */
-/*   Updated: 2019/06/07 16:46:21 by rwright          ###   ########.fr       */
+/*   Updated: 2019/06/07 21:18:56 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctypes.h"
+#include "ft_ctype.h"
 #include "ft_string.h"
 #include <stdlib.h>
 

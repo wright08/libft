@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rwright <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/30 20:57:26 by rwright           #+#    #+#             */
-/*   Updated: 2019/01/30 21:06:21 by rwright          ###   ########.fr       */
+/*   Created: 2019/01/17 18:15:29 by rwright           #+#    #+#             */
+/*   Updated: 2019/06/07 21:17:46 by rwright          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ctype.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_isalnum(int c)
 {
-	t_list *ret;
-
-	ret = 0;
-	if (lst)
-	{
-		ret = (*f)(lst);
-		ret->next = ft_lstmap(lst->next, f);
-	}
-	return (ret);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

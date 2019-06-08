@@ -9,16 +9,16 @@ INC		= -I inc
 SRC_DIR	= src
 OBJ_DIR	= obj
 
-#	CTYPES
+#	CTYPE
 SRC = \
-	  ctypes/ft_isalnum\
-	  ctypes/ft_isalpha\
-	  ctypes/ft_isascii\
-	  ctypes/ft_isdigit\
-	  ctypes/ft_isprint\
-	  ctypes/ft_isspace\
-	  ctypes/ft_toupper\
-	  ctypes/ft_tolower
+	  ctype/ft_isalnum\
+	  ctype/ft_isalpha\
+	  ctype/ft_isascii\
+	  ctype/ft_isdigit\
+	  ctype/ft_isprint\
+	  ctype/ft_isspace\
+	  ctype/ft_toupper\
+	  ctype/ft_tolower
 
 #	MATH
 SRC += \
@@ -78,15 +78,6 @@ SRC += \
 	  stdio/printf/utils\
 	  stdio/printf/ft_printf\
 	  stdio/printf/parse
-
-#	LIST
-SRC += \
-	  list/ft_lstadd\
-	  list/ft_lstdel\
-	  list/ft_lstdelone\
-	  list/ft_lstiter\
-	  list/ft_lstmap\
-	  list/ft_lstnew
 
 #	VECTOR
 SRC += \
